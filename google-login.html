@@ -62,33 +62,49 @@ limitations under the License.
 	/**
 	 * Direccion donde se realiza la peticion de autenticacion
      *
-     * @attribute callback
+     * @attribute OAUTHURL
      * @type string
      */
 			OAUTHURL:'https://accounts.google.com/o/oauth2/auth?',
    /**
-	 * Direccion donde se realiza la peticion de autenticacion
-     *
-     * @attribute callback
+	 * Scope de los datos que se desean obtener del usuario.
+     * Consultar scopes: https://developers.google.com/+/api/oauth#login-scopes
+	 *
+     * @attribute scope
      * @type string
      */
 			scope:'https://www.googleapis.com/auth/userinfo.profile',
-			TYPE:'token',
+	/**
+	 * Token obtenido al hacer login
+	 *
+     * @attribute acToken
+     * @type string
+     */
 			acToken:'',
 			tokenType:'',
 			expiresToken:'',
 			textLogin:'Sign in with google',
+
+
 			ready : function(){
 				if (this.textLogin.length != 0) {
 					this.text = this.textLogin;
 				};
 
 			},
+
+		/**
+		 * Funcion que realiza el login con google+
+		 * Dispara response
+		 *
+		 * @method login
+		 *
+		 */
 			login: function() {
 
 
 				var _url = this.OAUTHURL + 'scope=' + this.scope + '&client_id=' + this.clientID + '&redirect_uri=' + this.callback + '&response_type=token';
-				var win  = window.open(_url, "windowname1", 'width=800, height=600');
+				var win  = window.open(_url, "Google+ Login", 'width=800, height=600');
 				var back = this;
 
 				var pollTimer  =  window.setInterval(function() {
