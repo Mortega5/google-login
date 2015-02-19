@@ -1,4 +1,4 @@
-paper-button {
+.login {
 	background-color: #DF4A32;
 	border-radius: 5px;
 	box-shadow: 3px 3px 10px black;
@@ -15,4 +15,14 @@ paper-button > core-icon > div {
 	height: auto;
 	width: 30px;
 
+}
+
+.disconnect {
+	background-color: #5d5d57;
+	border-radius: 5px;
+	box-shadow: 3px 3px 10px black;
+	font-family: 'Roboto',sans-serif;
+	text-transform: none;
+	color: white;
+	font-size: 14px;
 }
