@@ -109,7 +109,7 @@ limitations under the License.
 				var pollTimer  =  window.setInterval(function() {
 					try {
 
-						console.log(win.document.URL.indexOf('access_token'));
+
 						if (win.document.URL.indexOf('access_token') != -1) {
 							window.clearInterval(pollTimer);
 							var url =   win.document.URL;
