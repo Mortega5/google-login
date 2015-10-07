@@ -61,6 +61,7 @@ limitations under the License.
     }
   </style>
   <template>
+    <link rel="stylesheet" href="google-login.css">
     <iron-ajax id="request"
                method="GET"
                url="https://accounts.google.com/o/oauth2/revoke?"
