@@ -21,39 +21,45 @@ limitations under the License.
 <link rel="import" href="../iron-ajax/iron-ajax.html">
 <link href="https://fonts.googleapis.com/css?family=Roboto:400italic" rel="stylesheet" type="text/css">
 <!--
-  # Uso
-  <google-login></google-login>
+# Uso
+<google-login></google-login>
 
-  @element google-login
-  @blurb Boton de login para google+
-  @status beta
-  @homepage https://github.com/Mortega5/google-login
+@element google-login
+@blurb Boton de login para google+
+@status beta
+@homepage https://github.com/Mortega5/google-login
 -->
 <dom-module is="google-login">
   <style is="custom-style">
     :host {
       display: inline-block;
+      --google-login-large: {
+        background: #DF4A32;
+        color: #fff;
+        border-radius: 3px;
+        cursor: pointer;
+        margin:auto;
+        text-transform: none;
+      };
+      --google-login-sort: {
+        background: #DF4A32;
+        border-radius: 3px;
+        cursor: pointer;
+        margin:auto;
+        text-transform: none;
+        height: var(--google-login-sort-height, 46px);
+        width: var(--google-login-sort-width, 46px);
+      };
     }
     .large {
-      background: #DF4A32;
-      color: #fff;
-      border-radius: 3px;
-      cursor: pointer;
-      text-transform: none;
-      vertical-align: center;
-      width: 205px;
-      height: 50px;
-      font-size: 16px;
-    }
-
+      @apply(--google-login-large) 
+        }
     .sort{
-      background: #DF4A32;
-      border-radius: 3px;
-      cursor: pointer;
-      text-transform: none;
-      vertical-align: center;
-      height: 46px;
-      width: 82px;
+      @apply(--google-login-sort);
+    }
+    .sort iron-icon {
+      width: 30px;
+      height: auto;
     }
 
     .disconnect{
