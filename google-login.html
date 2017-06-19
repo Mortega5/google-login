@@ -34,6 +34,10 @@ limitations under the License.
     :host {
       display: inline-block;
     }
+    paper-button{
+      margin:0;
+      font-weight: normal !important;
+    }
     .large {
       background: #DF4A32;
       color: #fff;
@@ -171,7 +175,9 @@ limitations under the License.
           value: "Sign in with Google+",
         },
       },
-
+      listeners: {
+        "tap":"_login"
+      },
       _login: function() {
         var _url = this.OAUTHURL + "scope=" + this.scope + "&client_id=" + this.client_id + "&redirect_uri=" + this.callback + "&response_type=code token id_token gsession";
         var win  = window.open(_url, "Google+ Login", "width=800, height=600");
@@ -194,10 +200,8 @@ limitations under the License.
       },
 
       _logout: function() {
-        console.log(this.logged)
         var back = this;
         back.logged=false;
-        console.log(this.logged)
       },
 
       _largeAndDisconnected: function (logged,sort) {
